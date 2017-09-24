@@ -22,10 +22,10 @@
         }
         else {
           $ionicPopup.alert({
-            title: '',
-            template: '',
-            okText: '',
-            okType: ''
+            title: '警告',
+            template: '用户或密码不正确',
+            okText: '确定',
+            okType: 'button-energized'
           });
         }
       };
