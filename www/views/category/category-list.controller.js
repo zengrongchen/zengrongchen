@@ -54,6 +54,40 @@
           $scope.activeCategory=$scope.categories[index];
         }
 
+      };
+      $scope.activeSubCategory=function (data) {
+        $scope.activeSubCategory=data;
+        $ionicHistory.goBack();
+
+      };
+      $scope.showActiveSheet=function () {
+        $ionicActionSheet.show({
+          buttons:[
+            {
+              text:'<b>新增小分类</b>'
+            },
+            {
+              text:'编辑分类'
+            }
+          ],
+          cancelText:'取消',
+          buttonClicked:function (index) {
+            switch (index){
+              case 0:
+                $scope.gotoCategoryAdd();
+                break;
+              case 1:
+                break;
+            }
+
+          },
+          titleText:'更多操作'
+        });
+
+      };
+      $scope.gotoCategoryAdd=function () {
+        location.href='#/app/category-add/'+$scope.activeCategory.ID+'/'+$scope.activeCategory.Name;
+
       }
 
     }])

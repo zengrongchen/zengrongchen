@@ -93,7 +93,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'PlaylistCtrl'
       }
     }
-  });
+  })
+  .state('app.category-list', {
+    url: '/category-list',
+    views:{
+      'menuContent':{
+        templateUrl: 'views/category-list/category-list.html',
+        controller: 'CategoryListCtrl'
+      }
+    }
+
+  })
+    .state('app.category-add', {
+      url: '/category-add/:id/:name',
+      views:{
+        'menuContent':{
+          templateUrl: 'views/category-list/category-add.html',
+          controller: 'CategoryAddCtrl'
+        }
+      }
+
+    })
+    .state('app.search',{
+      url:'search',
+      views:{
+        'menuContent':{
+          templateUrl:'templates/search.html'
+        }
+      }
+    })
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/app/playlists');
   $urlRouterProvider.otherwise('/');
